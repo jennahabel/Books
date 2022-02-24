@@ -33,6 +33,11 @@ namespace Bookstore
             });
 
             services.AddScoped<IBooksRepository, EFBooksRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
        
@@ -44,17 +49,28 @@ namespace Bookstore
             }
 
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "Pagination",
-                    pattern: "Page{pageNum}",
+                    name: "categories",
+                    pattern: "{category}/Page{pageNum}",
                     defaults: new { Controller = "Home", action = "Index" });
 
+                endpoints.MapControllerRoute("Pagination",
+                    "Page{pageNum}",
+                    new { Controller = "Home", action = "Index", pageNum = 1});
+
+                endpoints.MapControllerRoute("type",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1});
+
+             
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
         }
     }

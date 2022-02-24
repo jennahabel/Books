@@ -180,3 +180,8 @@
 /Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Bookstore.pdb
 /Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Bookstore.genruntimeconfig.cache
 /Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Razor/Views/Shared/BookSummary.cshtml.g.cs
+/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/Types/Default.cshtml.g.cs
+/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Razor/Pages/Cart.cshtml.g.cs
+/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Razor/Pages/_CartLayout.cshtml.g.cs
+/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Razor/Pages/_ViewImports.cshtml.g.cs
+/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/Debug/netcoreapp3.1/Razor/Pages/_ViewStart.cshtml.g.cs

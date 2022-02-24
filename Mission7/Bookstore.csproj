@@ -13,6 +13,10 @@
     <None Remove="Views\Home\" />
     <None Remove="Infastructure\" />
     <None Remove="Models\ViewModels\" />
+    <None Remove="Components\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Types\" />
+    <None Remove="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -24,6 +28,10 @@
     <Folder Include="Infastructure\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="wwwroot\lib\" />
+    <Folder Include="Components\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Types\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
