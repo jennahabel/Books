@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 
+//This is a template - this grabs the Book database so we can use it
+
 namespace Bookstore.Models
 {
     public interface IBooksRepository
@@ -8,3 +10,4 @@ namespace Bookstore.Models
         public IQueryable<Book> Books { get; }
     }
 }
+

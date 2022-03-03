@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 
+//This is the implementation of the template
+
 namespace Bookstore.Models
 {
     public class EFBooksRepository : IBooksRepository

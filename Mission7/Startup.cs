@@ -33,11 +33,16 @@ namespace Bookstore
             });
 
             services.AddScoped<IBooksRepository, EFBooksRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
 
             services.AddRazorPages();
 
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            //When we see the basket we will called the GetBasket method or else create a new one for the particular session
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
        

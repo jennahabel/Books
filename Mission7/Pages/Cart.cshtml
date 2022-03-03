@@ -4,6 +4,7 @@
 @{
 }
 
+<!-- This is a Razon Page so it is not connected to a controller -->
 <!--This shows the page with my cart-->
 
 <h2> Your cart </h2>
@@ -18,16 +19,25 @@
         </tr>
     </thead>
 
+    <!--This shows the table in my cart-->
     <tbody>
-        @foreach(var i in Model.basket.Items)
+        @foreach (var i in Model.basket.Items)
         {
-        <tr>
-            <td>@i.Book.Title</td>
-            <td>@i.Quantity</td>
-            <td>@i.Book.Price</td>
-            <td>@(i.Quantity * i.Book.Price)</td>
+            <tr>
+                <td>@i.Book.Title</td>
+                <td>@i.Quantity</td>
+                <td>$@i.Book.Price.ToString("#,##0.00")</td>
+                <td>$@((i.Quantity * i.Book.Price).ToString("#,##0.00"))</td>
 
-        </tr>
+                <td class="text=center">
+                    <form method="post" asp-page-handler="Remove">
+                        <input type="hidden" name="bookId" value="@i.Book.BookId" />
+                        <!--Why do we have i and why is this Model-->
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn btn-danger">Remove</button>
+                    </form>
+                </td>
+            </tr>
         }
     </tbody>
 
@@ -42,5 +52,6 @@
 
 <div>
     <a class="btn btn-primary" href="@Model.ReturnUrl">Back to Shopping</a>
+    <a class="btn btn-primary"  asp-controller="Purchase" asp-action="Checkout">Checkout</a>
 </div>
 
