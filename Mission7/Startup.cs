@@ -33,7 +33,21 @@ namespace Bookstore
             });
 
             services.AddScoped<IBooksRepository, EFBooksRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            //When we see the basket we will called the GetBasket method or else create a new one for the particular session
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //add Blazer
+            services.AddServerSideBlazor();
         }
+
 
        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,12 +58,32 @@ namespace Bookstore
             }
 
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "categories",
+                    pattern: "{category}/Page{pageNum}",
+                    defaults: new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("Pagination",
+                    "Page{pageNum}",
+                    new { Controller = "Home", action = "Index", pageNum = 1});
+
+                endpoints.MapControllerRoute("type",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1});
+
+             
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
+
+                //This is for the Blazor Pages
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
         }
     }

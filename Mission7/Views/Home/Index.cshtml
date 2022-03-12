@@ -4,37 +4,20 @@
 
 @model BooksViewModel
 
-<div class="text-center">
-    <h1>Bookstore</h1>
+<!--This is the main page-->
 
-    <div class="row">
-        @foreach (Book b in Model.Books)
-        {
-            <div class="col-sm-4">
-                <div class="card card-outline-primary m-1 p-1" style="display:flex;">
-                    <h3 class="card-header">@b.Title</h3>
-                    <div class="card-body">
-                        <ul class="card-text">
-                            <li style="list-style-type:none;">Author: @b.Author</li>
-                            <li style="list-style-type: none;">Publisher: @b.Publisher</li>
-                            <li style="list-style-type: none;">Isbn: @b.Isbn</li>
-                            <li style="list-style-type: none;">Classification: @b.Classification</li>
-                            <li style="list-style-type: none;">PageCount: @b.PageCount</li>
-                            <li style="list-style-type: none;">Price: @b.Price</li>
-                        </ul>
-                    </div>
-                </div>
-                <br />
-            </div>
-        }
+@foreach (Book b in Model.Books)
+{
+    <partial name="BookSummary" model="b"/>
+}
 
 
-    </div>
-    <div page-model="@Model.PageInfo" page-action="Index"
-         page-classes-enabled="true"
-         page-class="btn"
-         page-class-normal="btn-outline-dark"
-         page-class-selected="btn-primary"
-         class="btn-group pull-right m-1">></div>
-</div>
+
+<div page-model="@Model.PageInfo" page-action="Index"
+        page-classes-enabled="true"
+        page-class="btn"
+        page-class-normal="btn-outline-dark"
+        page-class-selected="btn-primary"
+        class="btn-group pull-right m-1"></div>
+
  
