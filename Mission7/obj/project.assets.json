@@ -1205,7 +1205,7 @@
       "outputPath": "/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jennaconnell/.nuget/NuGet/NuGet.Config"
+        "/Users/jennaconnell/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
