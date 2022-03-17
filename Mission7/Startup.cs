@@ -6,6 +6,7 @@ using Bookstore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,8 +33,29 @@ namespace Bookstore
                 options.UseSqlite(Configuration["ConnectionStrings:BookstoreDBConnection"]);
             });
 
+            //set up for admin security
+            services.AddDbContext<AppIdentityDBContext>(options =>
+              options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDBContext>();
+
             services.AddScoped<IBooksRepository, EFBooksRepository>();
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            //When we see the basket we will called the GetBasket method or else create a new one for the particular session
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //add Blazer
+            services.AddServerSideBlazor();
         }
+
 
        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,13 +66,40 @@ namespace Bookstore
             }
 
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
+
+            //Set up for admin security
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "categories",
+                    pattern: "{category}/Page{pageNum}",
+                    defaults: new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("Pagination",
+                    "Page{pageNum}",
+                    new { Controller = "Home", action = "Index", pageNum = 1});
+
+                endpoints.MapControllerRoute("type",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1});
+
+             
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
+
+                //This is for the Blazor Pages
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
+
+            //because this is static it allows us to use it everywhere and it will be reflected where it was initialized
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

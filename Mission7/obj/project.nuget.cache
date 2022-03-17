@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "khLxyG8pN0Wv5GTRNqFIu5MYy+kN3iRRn96+ww9oq9oMVE1JUnn76BVYFPrO47I2fA1jwQCOgvIDToQbH8fqmg==",
+  "dgSpecHash": "rz7DOFBH0plndSb2pGtYYdl8aEM1xb+Y+nUd746vp/Z0sCZ2PVe168hWaN1yZxc64Jyr7bpJiYiSi9S90/Vhiw==",
   "success": true,
   "projectFilePath": "/Users/jennaconnell/Documents/ISPROGRAM/IS413/Mission7/Books/Mission7/Bookstore.csproj",
   "expectedPackageFiles": [
+    "/Users/jennaconnell/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.22/microsoft.aspnetcore.cryptography.internal.3.1.22.nupkg.sha512",
+    "/Users/jennaconnell/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.22/microsoft.aspnetcore.cryptography.keyderivation.3.1.22.nupkg.sha512",
+    "/Users/jennaconnell/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/3.1.22/microsoft.aspnetcore.identity.entityframeworkcore.3.1.22.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.bcl.hashcode/1.1.1/microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
@@ -25,6 +28,8 @@
     "/Users/jennaconnell/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.22/microsoft.extensions.dependencyinjection.3.1.22.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.22/microsoft.extensions.dependencyinjection.abstractions.3.1.22.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.extensions.dependencymodel/3.1.6/microsoft.extensions.dependencymodel.3.1.6.nupkg.sha512",
+    "/Users/jennaconnell/.nuget/packages/microsoft.extensions.identity.core/3.1.22/microsoft.extensions.identity.core.3.1.22.nupkg.sha512",
+    "/Users/jennaconnell/.nuget/packages/microsoft.extensions.identity.stores/3.1.22/microsoft.extensions.identity.stores.3.1.22.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.extensions.logging/3.1.22/microsoft.extensions.logging.3.1.22.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.22/microsoft.extensions.logging.abstractions.3.1.22.nupkg.sha512",
     "/Users/jennaconnell/.nuget/packages/microsoft.extensions.options/3.1.22/microsoft.extensions.options.3.1.22.nupkg.sha512",
