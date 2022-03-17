@@ -6,6 +6,7 @@ using Bookstore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,13 @@ namespace Bookstore
             {
                 options.UseSqlite(Configuration["ConnectionStrings:BookstoreDBConnection"]);
             });
+
+            //set up for admin security
+            services.AddDbContext<AppIdentityDBContext>(options =>
+              options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDBContext>();
 
             services.AddScoped<IBooksRepository, EFBooksRepository>();
             services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
@@ -61,6 +69,10 @@ namespace Bookstore
             app.UseSession();
             app.UseRouting();
 
+            //Set up for admin security
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -85,6 +97,9 @@ namespace Bookstore
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
+
+            //because this is static it allows us to use it everywhere and it will be reflected where it was initialized
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

@@ -1,40 +1,51 @@
 ﻿<Properties StartupConfiguration="{0DF6BE5D-74B2-4B7B-91DA-3D885D3049A8}|Mission7">
   <MonoDevelop.Ide.ItemProperties.Bookstore PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mission7/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mission7/Views/Shared/BookSummary.cshtml">
     <Files>
       <File FileName="Mission7/Pages/Admin/Purchases.razor" Line="12" Column="82" />
-      <File FileName="Mission7/Startup.cs" />
-      <File FileName="Mission7/Pages/Admin/Index.cshtml" Line="16" Column="55" />
-      <File FileName="Mission7/Pages/Admin/PurchaseTable.razor" Line="10" Column="33" />
-      <File FileName="Mission7/Pages/Admin/AdminLayout.razor" />
-      <File FileName="Mission7/Pages/Admin/Books.razor" Line="56" Column="53" />
+      <File FileName="Mission7/Startup.cs" Line="36" Column="40" />
+      <File FileName="Mission7/Pages/Admin/Index.cshtml" Line="8" Column="2" />
+      <File FileName="Mission7/Pages/Admin/PurchaseTable.razor" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/Admin/AdminLayout.razor" Line="13" Column="11" />
+      <File FileName="Mission7/Pages/Admin/Books.razor" Line="12" Column="3" />
       <File FileName="Mission7/Models/IPurchaseRepository.cs" />
       <File FileName="Mission7/Models/IBooksRepository.cs" />
-      <File FileName="Mission7/Models/EFBooksRepository.cs" Line="33" Column="37" />
-      <File FileName="Mission7/Pages/Admin/Details.razor" Line="22" Column="8" />
+      <File FileName="Mission7/Models/EFBooksRepository.cs" />
+      <File FileName="Mission7/Pages/Admin/Details.razor" />
       <File FileName="Mission7/Pages/Admin/_Imports.razor" />
-      <File FileName="Mission7/Pages/Admin/Editor.razor" Line="100" Column="39" />
-      <File FileName="Mission7/Models/Books.cs" Line="18" Column="18" />
+      <File FileName="Mission7/Pages/Admin/Editor.razor" />
+      <File FileName="Mission7/Models/Books.cs" />
       <File FileName="Mission7/Views/Home/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Mission7/Views/Shared/_Layout.cshtml" Line="9" Column="5" />
+      <File FileName="Mission7/Views/Shared/_Layout.cshtml" Line="15" Column="32" />
+      <File FileName="Mission7/Models/AppIdentityDBContext.cs" Line="6" Column="20" />
+      <File FileName="Mission7/appsettings.json" />
+      <File FileName="Mission7/Models/IdentitySeedData.cs" Line="8" Column="33" />
+      <File FileName="Mission7/Models/ViewModels/LoginModel.cs" Line="13" Column="44" />
+      <File FileName="Mission7/Views/Account/Login.cshtml" Line="9" Column="30" />
+      <File FileName="Mission7/Controllers/AccountController.cs" Line="9" Column="57" />
+      <File FileName="Mission7/Models/ViewModels/PageInfo.cs" Line="1" Column="1" />
+      <File FileName="Mission7/Models/ViewModels/BooksViewModel.cs" Line="1" Column="1" />
+      <File FileName="Mission7/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/Admin/Routed.razor" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/PurchaseComplete.cshtml" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/Cart.cshtml" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Mission7/Pages/_CartLayout.cshtml" Line="1" Column="1" />
+      <File FileName="Mission7/Views/Shared/BookSummary.cshtml" Line="22" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Bookstore" expanded="True">
             <Node name="Bookstore" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Pages" expanded="True">
-                <Node name="Admin" expanded="True" />
-              </Node>
+              <Node name="Pages" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Purchase" expanded="True" />
-                <Node name="Shared" expanded="True" />
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="lib" expanded="True">
-                  <Node name="img" expanded="True" selected="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="BookSummary.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>
